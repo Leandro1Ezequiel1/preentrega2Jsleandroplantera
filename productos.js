@@ -65,11 +65,11 @@ const stockProductos = [
      },
      {
        id: 9,
-       nombre: "Fifa 2019",
+       nombre: "Fifa 2022 World Cup Edition",
        cantidad: 1,
        desc: "Juego de futbol",
        precio: 1400,
-       img: "img/fifa.jpg",
+       img: "img/th.jfif",
      },
      {
        id: 10,
@@ -79,5 +79,21 @@ const stockProductos = [
        precio: 1200,
        img: "img/fornite.jpg",
      },
+     {
+      id: 11,
+      nombre: "Call of Duty: Modern Warfare II",
+      cantidad: 1,
+      desc: "Call of Duty®: Modern Warfare® II ",
+      precio: 1200,
+      img: "img/cod.jfif",
+    },
+    {
+      id: 12,
+      nombre: "NBA 2k23",
+      cantidad: 1,
+      desc: "Ponte a la altura y desarrolla todo tu potencial en NBA 2K23",
+      precio: 1200,
+      img: "img/nba.jfif",
+    },
    ];
    

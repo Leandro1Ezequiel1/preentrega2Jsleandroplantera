@@ -1,86 +1,4 @@
-//  const stockProductos = [
-//    {
-//      id: 1,
-//      nombre: "Crash Bandicoot",
-//      cantidad: 1,
-// //     desc: "Juego plataformero, niveles dificiles",
-//     precio: 1200,
-//     img: "img/Crash.jpg",
-//   },
-//   {
-//     id: 2,
-//     nombre: "Mortal Kombat X",
-//     cantidad: 1,
-//     desc: "Luchas con los mejores graficos",
-//     precio: 1500,
-//     img: "img/mortal.jpg",
-//   },
-//   {
-//     id: 3,
-//     nombre: "Pac Man",
-//     cantidad: 1,
-//     desc: "Juego plataformero, niveles basicos",
-//     precio: 1570,
-//     img: "img/pacman.jpg",
-//   },
-//   {
-//     id: 4,
-//     nombre: "Dragon Ball Xenoverse",
-//     cantidad: 1,
-//     desc: "Vive la experiencia dragon ball",
-//     precio: 1000,
-//     img: "img/dragonball.jpg",
-//   },
-//   {
-//     id: 5,
-//     nombre: "Naruto Ninja Storm 4",
-//     cantidad: 1,
-//     desc: "La historia de Naruto",
-//     precio: 1200,
-//     img: "img/naruto.jpg",
-//   },
-//   {
-//     id: 6,
-//     nombre: "Shingeki Final Attack",
-//     cantidad: 1,
-//     desc: "Eren Jeager vuelve en formato gamer...",
-//     precio: 1200,
-//     img: "img/shingeki.jpg",
-//   },
-//   {
-//     id: 7,
-//     nombre: "League of Legends",
-//     cantidad: 1,
-//     desc: "No compres esto por tu bien",
-//     precio: 1400,
-//     img: "img/league.jpg",
-//   },
-//   {
-//     id: 8,
-//     nombre: "Call Of Duty Warzone",
-//     cantidad: 1,
-//     desc: "Dispara como nunca",
-//     precio: 1200,
-//     img: "img/callduty.jpg",
-//   },
-//   {
-//     id: 9,
-//     nombre: "Fifa 2019",
-//     cantidad: 1,
-//     desc: "Juego de futbol",
-//     precio: 1400,
-//     img: "img/fifa.jpg",
-//   },
-//   {
-//     id: 10,
-//     nombre: "Fornite",
-//     cantidad: 1,
-//     desc: "Battle Royale",
-//     precio: 1200,
-//     img: "img/fornite.jpg",
-//   },
-// ];
- let carrito = [];
+let carrito = [];
 
 const contenedor = document.querySelector("#contenedor");
 const carritoContenedor = document.querySelector("#carritoContenedor");
@@ -99,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
   mostrarCarrito();
-  document.querySelector("#activarFuncion".click(procesarCompra) );
+  document.querySelector("#activarFuncion".click(procesarCompra));
 });
 if (formulario) {
   formulario.addEventListener('submit', enviarCompra)
@@ -121,6 +39,7 @@ if (procesarCompra) {
         text: "Compra algo para continuar con la compra",
         icon: "error",
         confirmButtonText: "Aceptar",
+        
       });
     } else {
       location.href = "compra.html";
@@ -149,6 +68,8 @@ stockProductos.forEach((prod) => {
 const agregarProducto = (id) => {
   const existe = carrito.some(prod => prod.id === id)
 
+
+
   if (existe) {
     const prod = carrito.map(prod => {
       if (prod.id === id) {
@@ -159,8 +80,7 @@ const agregarProducto = (id) => {
     const item = stockProductos.find((prod) => prod.id === id)
     carrito.push(item)
   }
-  mostrarCarrito()
-
+  mostrarCarrito();
 };
 
 const mostrarCarrito = () => {
@@ -194,7 +114,7 @@ const mostrarCarrito = () => {
       <p class="text-center text-primary parrafo">¡Aun no agregaste nada!</p>
       `;
   } else {
-    console.log("Algo");
+    console.log("producto agregado");
   }
   carritoContenedor.textContent = carrito.length;
 
